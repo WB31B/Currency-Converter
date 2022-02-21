@@ -1,4 +1,8 @@
 import enumeration from "./views/enumeration";
-import click from "./views/input";
+import { currencyConvert } from "./views/input";
 
-enumeration.createElementUI();
+document.addEventListener('DOMContentLoaded', e => {
+    currencyConvert();
+
+    enumeration.createElementUI();
+});

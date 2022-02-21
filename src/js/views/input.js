@@ -1,13 +1,31 @@
-const input = document.querySelector('#input-currency');
-const btn = document.querySelector('.btn');
+import { select, btn, input } from "../variables/variables";
+import api from "../services/apiServices";
 
-let click = btn.addEventListener('click', e => {
-    let inputData = input.value;
+export function btnClick() {
+    btn.addEventListener('click', e => {
+        let inputData = input.value;
+    
+        if (inputData == '') {
+            return;
+        } else if (isNaN(inputData)) {
+            alert('Пожалуйста, введите число!');
+            return;
+        }
+        console.log(inputData);
+    });
+}
 
-    if (inputData == '') {
-        return;
-    }
-    console.log(inputData);
-});
+export function selectIndex() {
+    select.addEventListener('change', e => {
+        let index = select.selectedIndex;
+        
+        api.currency().then(el => {
+            
+        })
+    }); 
+}
 
-export default click;
+export function currencyConvert() {
+    btnClick();
+    selectIndex();
+}
