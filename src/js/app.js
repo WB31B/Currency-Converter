@@ -1,5 +1,4 @@
-import api from "./services/apiServices";
+import enumeration from "./views/enumeration";
+import click from "./views/input";
 
-api.currency().then(res => {
-    console.log(res);
-});
+enumeration.createElementUI();
