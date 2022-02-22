@@ -2,7 +2,11 @@ import { select, btn, input } from "../variables/variables";
 import api from "../services/apiServices";
 
 function btnClick() {
+    let saleIndexOfOblect;
+    let result;
+
     btn.addEventListener('click', e => {
+        let index = select.selectedIndex;
         let inputData = input.value;
     
         if (inputData == '') {
@@ -11,23 +15,25 @@ function btnClick() {
             alert('Пожалуйста, введите число!');
             return;
         }
-        console.log(inputData);
-    });
+        console.log(index)
+    
+        api.currency().then(el => {
+            saleIndexOfOblect = el[index].sale; // Sale 
+        });
+
+        result = saleIndexOfOblect * inputData;
+        result = result.toFixed(2);
+
+        createConvertUI(result);
+
+    }); 
 }
 
-function selectIndex() {
-    select.addEventListener('change', e => {
-        let index = select.selectedIndex;
-
-        // Option has index and elements object have index
-        api.currency().then(el => {
-            const saleIndexOfOblect = el[index].sale; // Sale 
-            console.log(saleIndexOfOblect);
-        })
-    }); 
+function createConvertUI(res) {
+    const currency = document.querySelector('.currency');
+    return currency.textContent = 'Convert: ' + res;
 }
 
 export function currencyConvert() {
     btnClick();
-    selectIndex()
 }
