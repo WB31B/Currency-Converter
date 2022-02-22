@@ -1,37 +1,23 @@
-import { select, btn, input } from "../variables/variables";
-import api from "../services/apiServices";
+import { currencyBuy, currencySale, btnSale, btnBuy, inputSale, inputBuy } from "../variables/variables";
+import { inputDataBuy } from "../examination/inputDataBuy";
+import { inputDataSale } from "../examination/inputDataSale";
 
 function btnClick() {
-    let saleIndexOfOblect;
-    let result;
+    btnSale.addEventListener('click', e => {
+        console.log('click');
+        let index = currencySale.selectedIndex; // index option
+        let text = inputSale.value; // value input
 
-    btn.addEventListener('click', e => {
-        let index = select.selectedIndex;
-        let inputData = input.value;
-    
-        if (inputData == '') {
-            return;
-        } else if (isNaN(inputData)) {
-            alert('Пожалуйста, введите число!');
-            return;
-        }
-        console.log(index)
-    
-        api.currency().then(el => {
-            saleIndexOfOblect = el[index].sale; // Sale 
-        });
-
-        result = saleIndexOfOblect * inputData;
-        result = result.toFixed(2);
-
-        createConvertUI(result);
-
+        inputDataSale(text, index); // Enumeration (if text has number -> true)
     }); 
-}
 
-function createConvertUI(res) {
-    const currency = document.querySelector('.currency');
-    return currency.textContent = 'Convert: ' + res;
+    btnBuy.addEventListener('click', e => {
+        console.log('click');
+        let index = currencyBuy.selectedIndex; // index option
+        let text = inputBuy.value; // value input
+
+        inputDataBuy(text, index); // Enumeration (if text has number -> true)
+    }); 
 }
 
 export function currencyConvert() {

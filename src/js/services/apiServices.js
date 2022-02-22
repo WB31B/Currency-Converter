@@ -6,7 +6,16 @@ class Api {
         this.url = config.url;
     }
 
-    async currency() {
+    async currencySale() {
+        try {
+            const responce = await axios.get(`${this.url}`);
+            return responce.data;
+        } catch (err) {
+            return Promise.reject(err);
+        }
+    }
+
+    async currencyBuy() {
         try {
             const responce = await axios.get(`${this.url}`);
             return responce.data;

@@ -1,0 +1,121 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+}
+
+input {
+    margin: 0;
+    padding: 0;  
+}
+
+.container {
+    background-color: aliceblue;
+    /* border: 2px solid #77DDE7; */
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5)
+}
+.container__form {
+    display: flex;
+    align-items: center;
+}
+
+.currency-uan {
+    margin-right: 10px;
+}
+
+.container__title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.container__result {
+    font-size: 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.sale {
+    margin-bottom: 20px;
+}
+
+.container__sale {
+    font-size: 18px;
+}
+
+#input-currency-sale, #input-currency-buy {
+    border: 1px solid #000;
+    border-radius: 10px;
+    padding: 10px 0 10px 10px;
+    margin-left: 10px;
+}
+
+#currencySale, #currencyBuy {
+    padding: 10px 5px;
+    border-radius: 10px 10px 0 0;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 80px;
+}
+
+#currencySale::-ms-expand{
+    display: none;
+}
+
+#currencyBuy::-ms-expand{
+    display: none;
+}
+
+.form-select {
+    position: relative;
+    margin: 0 10px;
+}
+
+.form-select::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    display: block;
+
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 6px 0 6px;
+    border-color: #42AAFF transparent transparent transparent;
+
+    pointer-events: none;
+}
+
+option{
+    background-color: #E5F9FF;
+    font-size: 16px;
+}
+
+.btn {
+    font-size: 24px;
+    padding: 5px 20px;
+    border-radius: 10px;
+    background-color: #42AAFF;
+    color: white;
+    transition: background-color 0.2s linear;
+}
+
+.btn:hover {
+    background-color: #57D5FF;
+}

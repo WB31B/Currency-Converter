@@ -3,12 +3,12 @@ import api from "../services/apiServices";
 class EnumerationOBJ {
     constructor(api) {
         this.api = api;
-        this.select = document.querySelector('#currency');
+        this.select = document.querySelector('#currencyBuy');
     }
 
-    createElementUI() {
+    createElementUIBuy() {
         const fragment = document.createDocumentFragment();
-        api.currency().then(el => {
+        api.currencySale().then(el => {
             let curent = 0;
             el.forEach(currency => {
                 const option = document.createElement('option');
@@ -22,6 +22,6 @@ class EnumerationOBJ {
     } 
 }
 
-const enumeration = new EnumerationOBJ(api);
+const enumerationBuy = new EnumerationOBJ(api);
 
-export default enumeration;
+export default enumerationBuy;

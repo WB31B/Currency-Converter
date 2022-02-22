@@ -7,41 +7,40 @@
 
     <title>Currency Converter</title>
 
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .container {
-            max-width: 900px;
-            width: 100%;
-        }
-        .container__form {
-            display: flex;
-        }
-        .form-select {
-            margin: 0 10px;
-        }
-    </style>
-
 </head>
 <body>
 
     <div class="container">
-        <div class="container__title">
-            <h1 class="title">Currency Converter</h1>
-        </div>
-        <div class="container__form">
-            <input type="text" placeholder="Enter text" id="input-currency">
-            <div class="form-select">
-                <select name="currency" id="currency"></select>
+        <div class="sale">
+            <div class="container__title">
+                <h1 class="title">Currency Converter</h1>
             </div>
-            <button type="submit" class="btn">Converting</button>
+            <div class="container__form">
+                <p class="container__sale">Sale: </p>
+                <input type="text" placeholder="UAH" id="input-currency-sale">
+                <div class="form-select">
+                    <select name="currency" id="currencySale"></select>
+                </div>
+                <button type="submit" class="btn saleBtn">Converting</button>
+            </div>
+        </div>
+
+        <div class="buy">
+            <div class="container__form">
+                <p class="container__sale">Buy: </p>
+                <input type="text" placeholder="UAH" id="input-currency-buy">
+                <div class="form-select">
+                    <select name="currency" id="currencyBuy"></select>
+                </div>
+                <button type="submit" class="btn buyBtn">Converting</button>
+            </div>
+        </div>
+
+        <div class="container__result">
+            <p class="currencySale">Convert Sale: 0</p>
         </div>
         <div class="container__result">
-            <p class="currency">Convert: 0</p>
+            <p class="currencyBuy">Convert Buy: 0</p>
         </div>
     </div>
     

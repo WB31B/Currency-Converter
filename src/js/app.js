@@ -1,8 +1,11 @@
-import enumeration from "./views/enumeration";
+import '../css/style.css';
+import enumerationSale from "./views/enumerationSale";
+import enumerationBuy from './views/enumerationBuy';
 import { currencyConvert } from "./views/input";
 
 document.addEventListener('DOMContentLoaded', e => {
     currencyConvert();
-
-    enumeration.createElementUI();
+    
+    enumerationSale.createElementUISale();
+    enumerationBuy.createElementUIBuy();
 });
