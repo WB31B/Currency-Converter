@@ -11,36 +11,44 @@
 <body>
 
     <div class="container">
-        <div class="sale">
-            <div class="container__title">
-                <h1 class="title">Currency Converter</h1>
-            </div>
-            <div class="container__form">
-                <p class="container__sale">Sale: </p>
-                <input type="text" placeholder="UAH" id="input-currency-sale">
-                <div class="form-select">
-                    <select name="currency" id="currencySale"></select>
+        <div class="left">
+            <div class="sale">
+                <div class="container__title">
+                    <h1 class="title">Currency Converter</h1>
                 </div>
-                <button type="submit" class="btn saleBtn">Converting</button>
-            </div>
-        </div>
-
-        <div class="buy">
-            <div class="container__form">
-                <p class="container__sale">Buy: </p>
-                <input type="text" placeholder="UAH" id="input-currency-buy">
-                <div class="form-select">
-                    <select name="currency" id="currencyBuy"></select>
+                <div class="container__form">
+                    <p class="container__sale">Sale: </p>
+                    <input type="text" placeholder="UAH" id="input-currency-sale">
+                    <div class="form-select">
+                        <select name="currency" id="currencySale"></select>
+                    </div>
+                    <button type="submit" class="btn saleBtn">Converting</button>
                 </div>
-                <button type="submit" class="btn buyBtn">Converting</button>
+            </div>
+    
+            <div class="buy">
+                <div class="container__form">
+                    <p class="container__sale">Buy: </p>
+                    <input type="text" placeholder="UAH" id="input-currency-buy">
+                    <div class="form-select">
+                        <select name="currency" id="currencyBuy"></select>
+                    </div>
+                    <button type="submit" class="btn buyBtn">Converting</button>
+                </div>
+            </div>
+    
+            <div class="container__result">
+                <p class="currencySale">Sale: 0</p>
+            </div>
+            <div class="container__result">
+                <p class="currencyBuy">Buy: 0</p>
             </div>
         </div>
-
-        <div class="container__result">
-            <p class="currencySale">Convert Sale: 0</p>
-        </div>
-        <div class="container__result">
-            <p class="currencyBuy">Convert Buy: 0</p>
+        
+        <div class="right">
+            <div class="container-info">
+                <ul class="container__list"></ul>
+            </div>
         </div>
     </div>
     

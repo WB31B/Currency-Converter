@@ -23,6 +23,15 @@ class Api {
             return Promise.reject(err);
         }
     }
+
+    async currency() {
+        try {
+            const responce = await axios.get(`${this.url}`);
+            return responce.data;
+        } catch (err) {
+            return Promise.reject(err);
+        }
+    }
 }
 
 const api = new Api(config);

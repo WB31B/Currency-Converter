@@ -22,5 +22,5 @@ function resOption(data, index) {
 // Create elements on web-application
 function createConvertUI(data, index, el) {
     let resCurrency = data / el[index].sale;
-    return currencySaleAnswer.textContent = 'Convert Buy: ' + resCurrency.toFixed(9);
+    return currencySaleAnswer.textContent = 'Buy: ' + resCurrency.toFixed(5);
 }

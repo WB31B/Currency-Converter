@@ -8,7 +8,7 @@ class EnumerationOBJ {
 
     createElementUIBuy() {
         const fragment = document.createDocumentFragment();
-        api.currencySale().then(el => {
+        api.currencyBuy().then(el => {
             let curent = 0;
             el.forEach(currency => {
                 const option = document.createElement('option');
