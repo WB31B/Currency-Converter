@@ -1,9 +1,8 @@
 import api from "../services/apiServices";
-
 class CurrencyTable {
     constructor(api) {
         this.api = api;
-        this.list = document.querySelector('.container__list');
+        this.list = document.querySelector('.container__table');
     }
 
     createTable() {
@@ -11,15 +10,20 @@ class CurrencyTable {
 
         api.currency().then(el => {
             el.forEach(currency => {
-                const li = document.createElement('li');
+                const tr = document.createElement('tr');
+                const tdCcy = document.createElement('td');
+                const tdSale = document.createElement('td');
+                const tdBuy = document.createElement('td');
 
-                li.textContent = `
-                    Currency: ${currency.ccy} - 
-                    Sale: ${currency.sale} -
-                    Buy: ${currency.buy}`;
-                li.classList.add('container__item');
+                tdCcy.textContent = currency.ccy;
+                tdSale.textContent += currency.sale;
+                tdBuy.textContent += currency.buy;
 
-                fragment.appendChild(li);
+                tr.appendChild(tdCcy);
+                tr.appendChild(tdSale);
+                tr.appendChild(tdBuy);
+
+                fragment.appendChild(tr);
             });
             this.list.appendChild(fragment);
         });
